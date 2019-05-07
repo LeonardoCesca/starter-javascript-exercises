@@ -2,31 +2,47 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var buttonElement = document.querySelector('#app button');
 
-var todos = [
+var list = [
     'Fazer café',
     'Estudar JS',
     'Dormir'
 ];
 
-function renderTodos() {
+function renderAll() {
     listElement.innerHTML = '';
-    for(todo of todos) {
+    for(todo of list) {
         var todoElement = document.createElement('li');
         var todoText = document.createTextNode(todo);
+        
+        var linkElement = document.createElement('a'); 
+        var linkText = document.createTextNode('Remove'); 
 
+        linkElement.setAttribute('href', '#');
+        
+        var position = list.indexOf(todo); 
+
+        linkElement.setAttribute('onclick', 'deleteAll(' + position + ')');
+
+        linkElement.appendChild(linkText);
         todoElement.appendChild(todoText);
+        todoElement.appendChild(linkElement);
         listElement.appendChild(todoElement);
     }
 }
 
-renderTodos();
+renderAll();
 
-function addTodos() {
+function addAll() {
     var todoText = inputElement.value;
 
-    todos.push(todoText);
+    list.push(todoText);
     inputElement.value = '';
-    renderTodos();
+    renderAll();
 }
 
-buttonElement.onclick = addTodos;
+buttonElement.onclick = addAll;
+
+function deleteAll(position) {
+    list.splice(position, 1);
+    renderAll();
+}
