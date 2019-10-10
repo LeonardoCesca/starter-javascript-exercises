@@ -5,3 +5,9 @@ const newArr = arr.map(item => {
 })
 
 console.log(newArr);
+
+const sum = arr.reduce((total, next) => {
+    return total + next;
+});
+
+console.log(sum);
