@@ -1,7 +1,16 @@
-alert('Test')
+class TodoList {
+     constructor() {
+         this.todos = [];
+     }
 
-class Teste {
-    metodo() {
+     appTodo() {
+          this.todos.push('Novo todo');
+          console.log(this.todos);
+     }
+}
 
-    }
+const MinhaLista = new TodoList();
+
+document.getElementById('novotodo').onclick = function() {
+    MinhaLista.appTodo();
 }
