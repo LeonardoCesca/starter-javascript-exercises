@@ -9,7 +9,15 @@ class List {
     }
 }
 class TodoList extends List {
-   
+   constructor() {
+       super();
+
+       this.usuario = 'Leonardo';
+   }
+
+   mostraUsuario() {
+       console.log(this.usuario);
+   }
 }
 
 const MinhaLista = new TodoList();
@@ -17,3 +25,5 @@ const MinhaLista = new TodoList();
 document.getElementById('novotodo').onclick = function() {
     MinhaLista.add('Novo todo');
 }
+
+MinhaLista.mostraUsuario();
