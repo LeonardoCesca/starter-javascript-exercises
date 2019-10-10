@@ -1,10 +1,5 @@
-const usuario = {
-    nome: 'leonardo',
-    idade: 22,
-    funcao: 'Estagiário'
-};
+function soma(...params) {
+    return params.reduce((total, next) => total + next);
+}
 
-const  { nome, ...resto } = usuario;
-
-console.log(nome);
-console.log(resto); 
+console.log(soma(1,2,3));
