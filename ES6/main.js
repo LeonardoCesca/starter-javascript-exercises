@@ -17,3 +17,9 @@ const filter = arr.filter(item => {
 })
 
 console.log(filter);
+
+const find = arr.find(item => {
+    return item > 8;
+})
+
+console.log(find);
