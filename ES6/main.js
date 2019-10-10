@@ -1,14 +1,10 @@
 const usuario = {
     nome: 'leonardo',
     idade: 22,
-    endereco: {
-        cidade: 'Rio Grande do Sul',
-        estado: 'RS',
-    },
+    funcao: 'Estagiário'
 };
 
-const  { nome, idade, endereco: { cidade } } = usuario;
+const  { nome, ...resto } = usuario;
 
 console.log(nome);
-console.log(idade);
-console.log(cidade);
+console.log(resto); 
