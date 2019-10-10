@@ -1,7 +1,7 @@
-class Matematica {
-    static soma(a,b) {
-        return a+b;
-    }
-}
+const arr = [1,2,3,4,5,8,9];
 
-console.log(Matematica.soma(10,20));
+const newArr = arr.map(item => {
+    return item*2;
+})
+
+console.log(newArr);
