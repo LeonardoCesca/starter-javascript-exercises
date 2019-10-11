@@ -20,3 +20,8 @@ let checaEmpresaeIdade = usuarios.filter(({idade, empresa, nome}) => {
 let buscaUsuario = usuarios.find(usuario => { return usuario.empresa === 'Google' })
 console.log(buscaUsuario);
 
+//Multiplique a idade de todos usuários por dois e depois realize um filtro nos usuários que possuem
+//no máximo 50 anos:
+usuarios
+  .map(({nome, idade, empresa}) => { return {nome, idade: idade * 2, empresa} })
+  .filter(usuario => usuario.idade <= 50)
